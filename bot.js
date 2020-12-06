@@ -10,9 +10,11 @@ app.on('message', (m) => {
     if (m.author.bot) return;
     if (m.channel.type === "dm") return;
 
-    if (!m.content.toLowerCase().includes('bom') || !m.content.toLowerCase().includes('dia'))  {
-        m.delete();
-        m.author.send('Apenas mensagens de bom dia no #xet-de-bom-dia');
+    if (m.channel.id === "752505612503482439") {
+        if (!m.content.toLowerCase().includes('bom') || !m.content.toLowerCase().includes('dia')) {
+            m.delete();
+            m.author.send('Apenas mensagens de bom dia no #xet-de-bom-dia');
+        }
     }
 });
 
